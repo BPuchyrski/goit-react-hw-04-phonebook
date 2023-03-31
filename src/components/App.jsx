@@ -58,7 +58,7 @@ export const App = () => {
     const number = e.currentTarget.attributes.number.value;
     const index = contacts.findIndex(contact => contact.number === number);
     newContacts.splice(index, 1);
-    setFilter(newContacts);
+    setContacts(newContacts);
     if (filter !== '') {
       removeFilter(e);
     }
