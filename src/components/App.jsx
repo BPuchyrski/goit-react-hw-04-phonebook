@@ -12,9 +12,11 @@ export const App = () => {
   const [filter, setFilter] = useState('');
 
   useEffect(() => {
+    console.log('log');
     const savedContacts = localStorage.getItem('contacts');
 
     if (savedContacts) {
+      console.log('log2');
       setContacts(JSON.parse(savedContacts));
     }
   }, []);
