@@ -1,10 +1,10 @@
-import { Component } from 'react';
+// import { Component } from 'react';
 import ContactForm from './contactForm/ContactForm';
 import Filter from './filter/Filter';
 import ContactList from './contactList/ContactList';
 import { nanoid } from 'nanoid';
 import { useState } from 'react';
-import { useRef } from 'react';
+// import { useRef } from 'react';
 import { useEffect } from 'react';
 
 export const App = () => {
