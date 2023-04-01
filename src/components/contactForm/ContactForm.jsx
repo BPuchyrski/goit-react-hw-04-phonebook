@@ -2,11 +2,12 @@ import PropTypes from 'prop-types';
 import css from './ContactForm.module.css';
 // const { Component } = require('react');
 
-const ContactForm = ({ add }) => {
+const ContactForm = ({ add, inputRef }) => {
   return (
     <form className={css.form} onSubmit={add}>
       <span>Name</span>
       <input
+        ref={inputRef}
         className={css.input}
         placeholder="Enter name"
         type="text"

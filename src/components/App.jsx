@@ -4,7 +4,7 @@ import Filter from './filter/Filter';
 import ContactList from './contactList/ContactList';
 import { nanoid } from 'nanoid';
 import { useState } from 'react';
-// import { useRef } from 'react';
+import { useRef } from 'react';
 import { useEffect } from 'react';
 
 export const App = () => {
@@ -28,11 +28,14 @@ export const App = () => {
     localStorage.setItem('contacts', JSON.stringify(contacts));
   }, [contacts]);
 
+  const addContactInputRef = useRef();
+
   const addContact = e => {
     e.preventDefault();
-    const form = e.currentTarget;
-    const name = form.elements.name.value;
-    const number = form.elements.number.value;
+    // console.log(addContactInputRef.current.form.elements.name.value);
+    // const form = e.currentTarget;
+    const name = addContactInputRef.current.form.elements.name.value;
+    const number = addContactInputRef.current.form.elements.number.value;
     console.log(name, number);
     const index = contacts.findIndex(
       contact => contact.name.toLowerCase() === name.toLowerCase()
@@ -79,7 +82,7 @@ export const App = () => {
   return (
     <div>
       <h1>Phonebook</h1>
-      <ContactForm add={addContact} />
+      <ContactForm inputRef={addContactInputRef} add={addContact} />
       <h2>Contacts</h2>
       <Filter filter={handleFilterChange} />
       <ContactList
