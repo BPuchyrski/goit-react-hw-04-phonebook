@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
+import css from './Filter.module.css';
 // const { Component } = require('react');
 
 const Filter = ({ filter }) => {
   return (
-    <div>
+    <div className={css.filter}>
       <form onChange={filter} id="filter">
         <label htmlFor="filter">
           Filter contacts by name

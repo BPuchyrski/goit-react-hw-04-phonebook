@@ -8,21 +8,23 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 
 export const App = () => {
-  const [contacts, setContacts] = useState([]);
+  const [contacts, setContacts] = useState([
+    { id: 'id-1', name: 'Doctor Doom', number: '459-12-56' },
+    { id: 'id-2', name: 'Thanos', number: '443-89-12' },
+    { id: 'id-3', name: 'Ultron', number: '645-17-79' },
+    { id: 'id-4', name: 'Kang', number: '227-91-26' },
+  ]);
   const [filter, setFilter] = useState('');
 
   useEffect(() => {
-    console.log('log');
     const savedContacts = localStorage.getItem('contacts');
 
     if (savedContacts) {
-      console.log('log2');
       setContacts(JSON.parse(savedContacts));
     }
   }, []);
 
   useEffect(() => {
-    console.log('log3');
     localStorage.setItem('contacts', JSON.stringify(contacts));
   }, [contacts]);
 

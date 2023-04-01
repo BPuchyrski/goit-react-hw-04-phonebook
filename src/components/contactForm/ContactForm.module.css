@@ -1,0 +1,33 @@
+.form {
+  background-color: rgb(202, 179, 101);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 350px;
+  text-align: center;
+  border: 5px dashed red;
+  padding: 10px;
+  margin: 0 auto;
+}
+.input {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 20px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border-style: double;
+}
+.btn {
+  padding: 5px;
+  border-radius: 10px;
+  border-style: groove;
+  width: 30%;
+  margin: 0 auto;
+  background: linear-gradient(to right, #ffd700, #ff8c00);
+}
+
+.btn:hover {
+  background: linear-gradient(to left, #ffd700, #ff8c00);
+  cursor: pointer;
+}

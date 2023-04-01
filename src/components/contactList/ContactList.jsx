@@ -1,16 +1,21 @@
 import { nanoid } from 'nanoid';
 import PropTypes from 'prop-types';
+import css from './ContactList.module.css';
 // const { Component } = require('react');
 
 const ContactList = ({ contacts, delite, filter }) => {
   return (
-    <ul>
+    <ul className={css.list}>
       {filter === ''
         ? contacts.map(contact => {
             return (
-              <li key={nanoid()}>
+              <li className={css.item} key={nanoid()}>
                 {contact.name}: {contact.number}
-                <button number={contact.number} onClick={delite}>
+                <button
+                  className={css.btn}
+                  number={contact.number}
+                  onClick={delite}
+                >
                   Remove
                 </button>
               </li>
@@ -18,9 +23,13 @@ const ContactList = ({ contacts, delite, filter }) => {
           })
         : filter.map(contact => {
             return (
-              <li key={nanoid()}>
+              <li className={css.item} key={nanoid()}>
                 {contact.name}: {contact.number}
-                <button number={contact.number} onClick={delite}>
+                <button
+                  className={css.btn}
+                  number={contact.number}
+                  onClick={delite}
+                >
                   Remove
                 </button>
               </li>

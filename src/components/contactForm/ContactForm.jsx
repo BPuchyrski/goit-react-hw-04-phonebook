@@ -1,11 +1,14 @@
 import PropTypes from 'prop-types';
+import css from './ContactForm.module.css';
 // const { Component } = require('react');
 
 const ContactForm = ({ add }) => {
   return (
-    <form onSubmit={add}>
+    <form className={css.form} onSubmit={add}>
       <span>Name</span>
       <input
+        className={css.input}
+        placeholder="Enter name"
         type="text"
         name="name"
         pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -14,13 +17,15 @@ const ContactForm = ({ add }) => {
       />
       <span>Number</span>
       <input
+        className={css.input}
+        placeholder="Enter number"
         type="tel"
         name="number"
         pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
         title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
         required
       />
-      <button>Add contact</button>
+      <button className={css.btn}>Add contact</button>
     </form>
   );
 };
